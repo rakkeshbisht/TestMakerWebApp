@@ -1,0 +1,4 @@
+.quiz-create input[type="text"],
+.quiz-create textarea{
+  min-width: 500px;
+}

@@ -1,0 +1,28 @@
+  <h2>{{title}} </h2>
+  <div class="quiz-create">
+    <div>
+      <label for="title">Quiz title:</label>
+      <br />
+      <input type="text" id="title" [(ngModel)]="quiz.title" placeholder="choose a title...">
+    </div>
+    <div>
+      <label for="description">Quiz description:</label>
+      <br />
+      <input type="text" id="title" [(ngModel)]="quiz.description" placeholder="enter a description..." />
+    </div>
+    <div>
+      <label for="description">Quiz Informative text:</label>
+      <br />
+      <textarea type="text" id="title" [(ngModel)]="quiz.text" placeholder="enter a text..." >
+        </textarea>      
+    </div>
+    <div>
+      <input *ngIf="editMode" type="button" value="Apply Changes" (click)="onSubmit(quiz)" />
+      <input *ngIf="!editMode" type="button" value="Create new Quiz!" (click)="onSubmit(quiz)" />
+      <input type="button" value="Cancel" (click)="onBack()" />
+    </div>
+    <question-list [quiz]="quiz" *ngIf="editMode"></question-list>
+    <result-list *ngIf="editMode" [quiz]="quiz"></result-list>
+  </div>
+
+  

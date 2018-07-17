@@ -1,0 +1,25 @@
+<div class="quiz">
+  <h2>{{quiz.Title}} </h2>
+  <ul>
+    <li>
+      <label> Title : </label>
+      <input [(ngModel)]="quiz.title" placeholder="Insert the title" />
+    </li>
+    <li>
+      <label> Description: </label>
+      <textarea [(ngModel)]="quiz.description" placeholder="Insert a suitable Description"></textarea>
+    </li>
+  </ul>
+
+  <div>    
+    <a [routerLink]="['/quiz/edit',quiz.id]"> 
+      <span class='glyphicon glyphicon-edit'></span> Edit Quiz
+    </a>
+  </div>
+  <div>
+      <a (click)=onDelete()> 
+        <span class='glyphicon glyphicon-remove'></span> Delete this Quiz
+      </a>    
+  </div>
+
+</div>
